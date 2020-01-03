@@ -4,10 +4,10 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY package.json  ./
+COPY package*.json  ./
 
 RUN npm install \
-  && npm cache clean
+  && npm cache clean --force 
 
 EXPOSE 4000
 
