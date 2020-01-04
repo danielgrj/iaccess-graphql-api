@@ -7,7 +7,7 @@ import User from './User';
 const userResolvers = {
   Query,
   Mutation,
-  Subscription,
+  // Subscription,
   User
 };
 

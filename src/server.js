@@ -11,8 +11,8 @@ const pubsub = new PubSub();
 const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
   resolvers: {
-    ...complexResolvers,
-    ...appartamentResolvers,
+    // ...complexResolvers,
+    // ...appartamentResolvers,
     ...userResolvers
   },
   context(request) {
@@ -23,8 +23,8 @@ const server = new GraphQLServer({
     };
   },
   fragmentReplacements: {
-    ...complexFragmentReplacements,
-    ...appartamentFragmentReplacements,
+    // ...complexFragmentReplacements,
+    // ...appartamentFragmentReplacements,
     ...userFragmentReplacements
   }
 });
