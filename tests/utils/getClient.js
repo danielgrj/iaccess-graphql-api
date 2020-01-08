@@ -7,7 +7,7 @@ import { ApolloLink, Observable } from 'apollo-link';
 import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities';
 
-const getClient = (jwt, httpURL = 'http://localhost:4000', websocketURL = 'ws://localhost:4000') => {
+const getClient = (jwt, httpURL = 'http://localhost:4005', websocketURL = 'ws://localhost:4005') => {
   // Setup the authorization header for the http client
   const request = async operation => {
     if (jwt) {
