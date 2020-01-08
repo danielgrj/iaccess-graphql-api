@@ -9,12 +9,12 @@
     "test": "env-cmd ./config/.env.dev jest --watch --runInBand",
     "test:ci": "CI=true env-cmd ./config/.env.dev jest",
     "lint": "eslint './src/**/*.js'",
-    "prepush": "npm-run-all test lint",
+    "prepush": "npm-run-all test:ci lint",
     "get-schema": "graphql get-schema -p prisma --dotenv config/dev.env"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn prepush"
+      "pre-push": "npm run prepush"
     }
   },
   "jest": {
