@@ -1,7 +1,7 @@
 import { GraphQLServer, PubSub } from 'graphql-yoga';
 
-import { complexResolvers, complexFragmentReplacements } from './Complex';
-import { appartamentResolvers, appartamentFragmentReplacements } from './Appartament';
+// import { complexResolvers, complexFragmentReplacements } from './Complex';
+// import { appartamentResolvers, appartamentFragmentReplacements } from './Appartament';
 import { userResolvers, userFragmentReplacements } from './User';
 
 import prisma from './prisma';

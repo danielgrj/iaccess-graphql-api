@@ -4,7 +4,7 @@ import generateToken from '../utils/generateToken';
 import hashPassword from '../utils/hashPassword';
 
 const Mutation = {
-  async createUser(parent, args, { prisma }, info) {
+  async createUser(parent, args, { prisma }) {
     const password = await hashPassword(args.data.password);
     const user = await prisma.mutation.createUser({
       data: {
@@ -19,7 +19,7 @@ const Mutation = {
     };
   },
 
-  async login(parent, args, { prisma }, info) {
+  async login(parent, args, { prisma }) {
     const user = await prisma.query.user({
       where: {
         email: args.data.email
@@ -57,9 +57,10 @@ const Mutation = {
 
   async updateUser(parent, args, { prisma, request }, info) {
     const userId = getUserId(request);
+    const { data } = args;
 
     if (typeof args.data.password === 'string') {
-      args.data.password = await hashPassword(args.data.password);
+      data.password = await hashPassword(args.data.password);
     }
 
     return prisma.mutation.updateUser(
@@ -67,7 +68,7 @@ const Mutation = {
         where: {
           id: userId
         },
-        data: args.data
+        data
       },
       info
     );
