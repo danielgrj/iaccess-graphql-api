@@ -3,7 +3,7 @@
         "prisma": {
             "schemaPath": "src/generated/prisma.graphql",
             "extensions": {
-                "prisma": "prisma/prisma.yml",
+                "prisma": "../iaccess-docker/prisma.yml",
                 "endpoints": {
                     "default": "http://prisma:4466"
                 }
